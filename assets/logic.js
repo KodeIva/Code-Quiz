@@ -67,21 +67,21 @@ startBtn.addEventListener('click', function() {
 
 // Generating the questions and answers
 function generateQuestions() {
+  let choices = document.getElementById('choices')
   questionDiv.classList.remove('hide')
   questionTitle.classList.remove('hide')
   questionTitle.textContent = questions[currentQuestion].question
-  console.log(questionTitle);
-
+  
   let ol = document.createElement('ol')
-  questionDiv.append(ol)
+  choices.append(ol)
 
  for(let i = 0; i < questions[currentQuestion].answers.length; i++) {
-   let choices = document.getElementById('choices')
+   let li = document.createElement('li')
    let btn = document.createElement('button')
    btn.textContent = questions[currentQuestion].answers[i]
-  
-   choices.appendChild(btn) 
-
+   ol.appendChild(li) 
+   li.appendChild(btn)
+   
    btn.addEventListener('click', function(e) {
     if(e.target.innerHTML !== questions[currentQuestion].correctAnswer) {
       time = time - 10
