@@ -2,9 +2,9 @@ let Scores = document.querySelector('#highscores')
 
 // Adding initials and score from localStorage
 function hScores() {
- let newUser = localStorage.getItem('user') || ({user: ''})
+ let newUser = JSON.parse(localStorage.getItem('user') || ({user: ''}))
  console.log(newUser);
- let newScore = localStorage.getItem('score') || ({score: ''})
+ let newScore = JSON.parse(localStorage.getItem('score') || ({score: ''}))
  console.log(newScore);
  let score = document.createElement('li')
  score.textContent = `${newUser.toUpperCase()} - ${newScore}points`
