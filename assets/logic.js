@@ -120,8 +120,8 @@ subBtn.addEventListener('click', (e) => {
  let score
  user = input.value
  score = winningPoints
- localStorage.setItem('user', user)
- localStorage.setItem('score',score)
- document.location.assign('highscores.html')
+ localStorage.setItem('user',  JSON.stringify(user))
+ localStorage.setItem('score', JSON.stringify(score))
+ document.location.assign('highscores.html') 
  input.value = ''
 })
